@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Libre Baskerville";
+  src: url(/fonts/Libre_Baskerville/LibreBaskerville-VariableFont_wght.ttf);
+}
+
+@theme {
+  --font-serif: "Libre Baskerville", sans-serif;
+  --color-grey-400: #7d7d7d;
+  --color-grey-200: #d8d8d8;
+  --color-grey-150: #e5e5e5;
+  --color-grey-100: #f3f3f3;
+}
+
+.container {
+  max-width: 1440px;
+}
