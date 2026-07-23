@@ -2,6 +2,7 @@ import Header from "./layout/header";
 import "./i18n/i18n";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
+import Grid from "./layout/grid";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -12,8 +13,13 @@ function App() {
 
   return (
     <div className="bg-white font-serif">
-      <div className="container mx-auto py-7.5 md:p-10">
-        <Header />
+      <div className="container mx-auto py-6 sm:py-7.5 md:p-10">
+        <header className="border-grey-150 border-b px-6 pb-6 sm:px-10 sm:pb-6 md:px-0 md:pb-10">
+          <Header />
+        </header>
+        <main className="px-6 pt-6 pb-6 sm:px-10 sm:pt-7.5 sm:pb-6 md:px-0 md:pb-10">
+          <Grid />
+        </main>
       </div>
     </div>
   );
