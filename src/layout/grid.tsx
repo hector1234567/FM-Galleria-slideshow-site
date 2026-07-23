@@ -1,6 +1,7 @@
 import Card from "../components/card";
 import { useWindowWidth } from "../hooks/useWindowWidth";
 import type { PaintType } from "../types";
+import { shuffle } from "../utils/helpers";
 
 type GridProps = {
   paints: PaintType[];
@@ -8,6 +9,8 @@ type GridProps = {
 
 export default function Grid({ paints }: GridProps) {
   const windowWith = useWindowWidth();
+
+  paints = shuffle(paints) as PaintType[];
 
   let numCols = 1;
 
@@ -35,13 +38,15 @@ export default function Grid({ paints }: GridProps) {
       style={{ gridTemplateColumns: `repeat(${numCols}, minmax(0, 1fr))` }}
     >
       {cols.map((col, index) => (
-        <div key={index}>
+        <div key={index} className="-mb-10">
           {col.map((p) => (
             <>
               {p?.height ? (
                 <Card
-                  height={((p.height + 40 || 0) * colHeight) / heights[index]}
+                  height={((p.height + 40) * colHeight * 1.2) / heights[index]}
                   imgUrl={p.images.thumbnail}
+                  name={p.name}
+                  artist={p.artist.name}
                   key={p.images.thumbnail}
                 />
               ) : null}
