@@ -3,9 +3,11 @@ import "./i18n/i18n";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import Grid from "./layout/grid";
+import useLoadPaints from "./hooks/useLoadPaints";
 
 function App() {
   const { t, i18n } = useTranslation();
+  const { paints, loading } = useLoadPaints();
 
   useEffect(() => {
     document.title = t("page_title");
@@ -18,7 +20,7 @@ function App() {
           <Header />
         </header>
         <main className="px-6 pt-6 pb-6 sm:px-10 sm:pt-7.5 sm:pb-6 md:px-0 md:pb-10">
-          <Grid />
+          {loading ? <span>Loading...</span> : <Grid paints={paints} />}
         </main>
       </div>
     </div>

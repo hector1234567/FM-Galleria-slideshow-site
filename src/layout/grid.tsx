@@ -1,7 +1,12 @@
 import Card from "../components/card";
 import { useWindowWidth } from "../hooks/useWindowWidth";
+import type { PaintType } from "../types";
 
-export default function Grid() {
+type GridProps = {
+  paints: PaintType[];
+};
+
+export default function Grid({ paints }: GridProps) {
   const windowWith = useWindowWidth();
 
   let numCols = 1;
@@ -10,18 +15,16 @@ export default function Grid() {
   if (windowWith > 768) numCols = 3;
   if (windowWith > 1030) numCols = 4;
 
-  const hs = [
-    100, 200, 300, 400, 100, 200, 300, 400, 100, 200, 300, 400, 100, 200, 300,
-    400, 100, 200, 300, 400,
-  ];
-
-  const cols: number[][] = Array.from({ length: numCols }, () => []);
+  const cols: PaintType[][] = Array.from({ length: numCols }, () => []);
   const heights = Array(numCols).fill(0);
 
-  for (const h of hs) {
+  for (const p of paints) {
     const colIndx = heights.indexOf(Math.min(...heights));
-    cols[colIndx].push(h);
-    heights[colIndx] += h;
+    const h = p.height;
+    if (!h) continue;
+
+    cols[colIndx].push(p);
+    heights[colIndx] += h + 40;
   }
 
   const colHeight = Math.min(...heights);
@@ -32,26 +35,20 @@ export default function Grid() {
       style={{ gridTemplateColumns: `repeat(${numCols}, minmax(0, 1fr))` }}
     >
       {cols.map((col, index) => (
-        <div>
-          {col.map((h) => (
-            <Card height={(h * colHeight) / heights[index]} />
+        <div key={index}>
+          {col.map((p) => (
+            <>
+              {p?.height ? (
+                <Card
+                  height={((p.height + 40 || 0) * colHeight) / heights[index]}
+                  imgUrl={p.images.thumbnail}
+                  key={p.images.thumbnail}
+                />
+              ) : null}
+            </>
           ))}
         </div>
       ))}
     </div>
-    // <div className="grid auto-rows-10 gap-x-10 bg-red-300 sm:grid-cols-2 md:grid-cols-4">
-    //   <Card height={100} />
-    //   <Card height={100} />
-    //   <Card height={100} />
-    //   <Card height={100} />
-    //   <Card height={300} />
-    //   <Card height={600} />
-    //   <Card height={100} />
-    //   <Card height={300} />
-    //   <Card height={600} />
-    //   <Card height={100} />
-    //   <Card height={300} />
-    //   <Card height={600} />
-    // </div>
   );
 }
