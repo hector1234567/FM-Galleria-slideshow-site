@@ -1,9 +1,10 @@
+import { Link } from "@tanstack/react-router";
 import logo from "../assets/shared/logo.svg";
 
 export default function Logo() {
   return (
-    <div className="">
+    <Link to={"/"}>
       <img src={logo} alt="Logo" className="h-8 md:h-12" />
-    </div>
+    </Link>
   );
 }

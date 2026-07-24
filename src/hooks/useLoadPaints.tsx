@@ -7,6 +7,7 @@ export default function useLoadPaints() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (paints.length) return;
     (async function fetchpaints() {
       const res = await fetch("/data.json");
       const data = (await res.json()) as PaintType[];

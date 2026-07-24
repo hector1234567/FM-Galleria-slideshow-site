@@ -1,3 +1,4 @@
+import React from "react";
 import Card from "../components/card";
 import { useWindowWidth } from "../hooks/useWindowWidth";
 import type { PaintType } from "../types";
@@ -35,19 +36,18 @@ export default function Grid({ paints }: GridProps) {
       style={{ gridTemplateColumns: `repeat(${numCols}, minmax(0, 1fr))` }}
     >
       {cols.map((col, index) => (
-        <div key={index} className="-mb-10">
+        <div className="-mb-10" key={index}>
           {col.map((p) => (
-            <>
+            <React.Fragment key={p.name}>
               {p?.height ? (
                 <Card
                   height={((p.height + 40) * colHeight * 1.2) / heights[index]}
                   imgUrl={p.images.thumbnail}
                   name={p.name}
                   artist={p.artist.name}
-                  key={p.images.thumbnail}
                 />
               ) : null}
-            </>
+            </React.Fragment>
           ))}
         </div>
       ))}
