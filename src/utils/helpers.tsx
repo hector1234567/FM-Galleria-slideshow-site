@@ -14,3 +14,12 @@ export function shuffle(array: unknown[]) {
   }
   return arr;
 }
+
+export function getImageHeight(src: string) {
+  return new Promise<number>((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(img.height);
+    img.onerror = () => reject(new Error("No se pudo decodificar la imagen"));
+    img.src = src;
+  });
+}

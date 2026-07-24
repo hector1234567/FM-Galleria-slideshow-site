@@ -1,7 +1,6 @@
 import Card from "../components/card";
 import { useWindowWidth } from "../hooks/useWindowWidth";
 import type { PaintType } from "../types";
-import { shuffle } from "../utils/helpers";
 
 type GridProps = {
   paints: PaintType[];
@@ -9,8 +8,6 @@ type GridProps = {
 
 export default function Grid({ paints }: GridProps) {
   const windowWith = useWindowWidth();
-
-  paints = shuffle(paints) as PaintType[];
 
   let numCols = 1;
 

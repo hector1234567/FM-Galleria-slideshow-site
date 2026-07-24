@@ -19,7 +19,7 @@ function App() {
         <header className="border-grey-150 border-b px-6 pb-6 sm:px-10 sm:pb-6 md:px-0 md:pb-10">
           <Header />
         </header>
-        <main className="px-6 pt-6 pb-6 sm:px-10 sm:pt-7.5 sm:pb-6 md:px-0 md:pb-10">
+        <main className="px-6 pt-6 pb-10 sm:px-10 sm:pt-7.5 md:px-0">
           {loading ? <span>Loading...</span> : <Grid paints={paints} />}
         </main>
       </div>
