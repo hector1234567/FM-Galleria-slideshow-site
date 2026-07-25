@@ -14,6 +14,7 @@ function RouteComponent() {
   const windowWith = useWindowWidth();
 
   if (loading) return <span>Loading...</span>;
+  if (!paints) return <span>Error!</span>;
 
   const index = paints.findIndex((p) => p.name === name.replaceAll("_", " "));
   const paint = paints[index];
@@ -56,7 +57,7 @@ function RouteComponent() {
         </div>
         <div className="relative -mt-27.5 bg-no-repeat pt-27.5 pb-14.75 md:mt-0 xl:w-119">
           <svg className="fill-grey-100 absolute top-0 right-0 ml-auto h-25 w-62.5 font-serif text-[100px] font-bold md:right-auto md:left-0 md:h-50 md:w-112.5 md:text-[180px]">
-            <text x="0" y="100%">
+            <text x="0" y="90%">
               {paint.year}
             </text>
           </svg>

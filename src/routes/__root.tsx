@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Outlet, createRootRoute } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Header from "../layout/header";
 import { useTranslation } from "react-i18next";
 import useLoadPaints from "../hooks/useLoadPaints";
@@ -31,6 +32,7 @@ function RootComponent() {
         </PaintsContext.Provider>
       </div>
       <TanStackRouterDevtools />
+      <ReactQueryDevtools />
     </div>
   );
 }
