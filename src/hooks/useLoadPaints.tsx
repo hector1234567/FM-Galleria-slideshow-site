@@ -9,5 +9,8 @@ export default function useLoadPaints() {
     staleTime: Infinity,
   });
 
-  return { paints: data, loading: isLoading };
+  return {
+    paints: data,
+    loading: isLoading,
+  };
 }

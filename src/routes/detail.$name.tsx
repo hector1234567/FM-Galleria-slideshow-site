@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
-import useLoadPaints from "../hooks/useLoadPaints";
 import { useWindowWidth } from "../hooks/useWindowWidth";
 import Navbar from "../layout/navbar";
 import ViewImageButton from "../components/view-image-button";
+import { useContext } from "react";
+import { PaintsContext } from "../contexts";
 
 export const Route = createFileRoute("/detail/$name")({
   component: RouteComponent,
@@ -10,7 +11,7 @@ export const Route = createFileRoute("/detail/$name")({
 
 function RouteComponent() {
   const { name } = Route.useParams() as { name: string };
-  const { paints, loading } = useLoadPaints();
+  const { paints, loading } = useContext(PaintsContext);
   const windowWith = useWindowWidth();
 
   if (loading) return <span>Loading...</span>;
