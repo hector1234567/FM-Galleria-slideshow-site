@@ -12,7 +12,7 @@ export default function Grid({ paints }: GridProps) {
 
   let numCols = 1;
 
-  if (windowWith > 375) numCols = 2;
+  if (windowWith > 560) numCols = 2;
   if (windowWith > 768) numCols = 3;
   if (windowWith > 1030) numCols = 4;
 

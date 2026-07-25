@@ -23,8 +23,8 @@ function RouteComponent() {
   return (
     <>
       <div className="flex flex-col justify-between gap-9 xl:mb-10 xl:flex-row">
-        <div className="flex xl:basis-212">
-          <figure className="relative max-h-140 w-full xl:mb-16 xl:h-118.75">
+        <div className="flex flex-col md:flex-row xl:basis-212">
+          <figure className="relative max-h-70 w-full overflow-hidden md:max-h-140 xl:mb-16 xl:h-118.75">
             <img
               src={heroImg}
               alt={paint.name}
@@ -41,9 +41,9 @@ function RouteComponent() {
               </span>
             </button>
           </figure>
-          <div className="z-10 flex flex-col xl:justify-between">
-            <div className="-mt-0.5 -ml-60 max-w-[50vw] bg-white pb-16 pl-16.25 xl:-ml-16.25">
-              <h1 className="mb-6 text-[56px] leading-[115%] font-bold">
+          <div className="z-10 -mt-15 flex min-w-40 flex-col md:mt-0 xl:justify-between">
+            <div className="max-w-[50vw] bg-white p-6 md:-mt-0.5 md:-ml-60 md:pb-16 md:pl-16.25 xl:-ml-16.25">
+              <h1 className="mb-2 text-[24px] leading-[115%] font-bold md:mb-6 md:text-[56px]">
                 {paint.name}
               </h1>
               <span className="text-grey-400 text-[14px]">
@@ -54,22 +54,18 @@ function RouteComponent() {
               <img
                 src={paint.artist.image}
                 alt={paint.artist.name}
-                className="ml-8 h-32 w-32"
+                className="ml-8 h-16 w-16 md:h-32 md:w-32"
               />
             </figure>
           </div>
         </div>
-        <div className="relative bg-no-repeat pt-27.5 pb-14.75 xl:w-119">
-          <svg
-            width="500"
-            height="210"
-            className="fill-grey-100 absolute top-0 left-0 font-serif text-[200px] font-bold"
-          >
-            <text x="0" y="200">
+        <div className="relative -mt-27.5 bg-no-repeat pt-27.5 pb-14.75 md:mt-0 xl:w-119">
+          <svg className="fill-grey-100 absolute top-0 right-0 ml-auto h-25 w-62.5 font-serif text-[100px] font-bold md:right-auto md:left-0 md:h-50 md:w-112.5 md:text-[180px]">
+            <text x="0" y="100%">
               {paint.year}
             </text>
           </svg>
-          <div className="text-grey-400 top relative mx-auto flex h-full max-w-114.25 flex-col justify-between xl:mx-0 xl:max-w-87.5">
+          <div className="text-grey-400 top relative flex h-full flex-col justify-between md:mx-auto md:max-w-114.25 xl:mx-0 xl:max-w-87.5">
             <p className="mb-10 text-[14px] leading-[200%]">
               {paint.description}
             </p>
