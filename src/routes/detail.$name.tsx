@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import useLoadPaints from "../hooks/useLoadPaints";
 import { useWindowWidth } from "../hooks/useWindowWidth";
 import Navbar from "../layout/navbar";
+import ViewImageButton from "../components/view-image-button";
 
 export const Route = createFileRoute("/detail/$name")({
   component: RouteComponent,
@@ -30,16 +31,10 @@ function RouteComponent() {
               alt={paint.name}
               className="h-full w-full object-cover"
             />
-            <button className="absolute bottom-4 left-4 flex cursor-pointer items-center gap-2 bg-black p-3.5 text-white">
-              <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
-                <g fill="#FFF" fill-rule="nonzero">
-                  <path d="M7.714 0l1.5 1.5-2.357 2.357 1.286 1.286L10.5 2.786l1.5 1.5V0zM3.857 6.857L1.5 9.214 0 7.714V12h4.286l-1.5-1.5 2.357-2.357zM8.143 6.857L6.857 8.143 9.214 10.5l-1.5 1.5H12V7.714l-1.5 1.5zM4.286 0H0v4.286l1.5-1.5 2.357 2.357 1.286-1.286L2.786 1.5z" />
-                </g>
-              </svg>
-              <span className="text-[10px] font-bold uppercase">
-                View image {index}
-              </span>
-            </button>
+            <ViewImageButton
+              imageUrl={paint.images.gallery}
+              name={paint.name}
+            />
           </figure>
           <div className="z-10 -mt-15 flex min-w-40 flex-col md:mt-0 xl:justify-between">
             <div className="max-w-[50vw] bg-white p-6 md:-mt-0.5 md:-ml-60 md:pb-16 md:pl-16.25 xl:-ml-16.25">
