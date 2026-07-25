@@ -17,7 +17,11 @@
   max-width: 1440px;
 }
 
-::view-transition-old(root),
+@view-transition {
+  navigation: auto;
+}
+
+/* ::view-transition-old(root),
 ::view-transition-new(root) {
   animation-duration: 0.3s;
 }
@@ -40,4 +44,4 @@
   from {
     opacity: 0;
   }
-}
+} */

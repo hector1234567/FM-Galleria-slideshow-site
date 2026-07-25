@@ -16,14 +16,14 @@ export default function GalleryButton() {
       clearInterval(interval.current);
       interval.current = null;
       setIsPlaying(false);
-      return; // importante: salir aquí, no tocar count
+      return;
     }
 
     setCount(0);
     setIsPlaying(true);
     interval.current = window.setInterval(() => {
       setCount((prev) => (prev + 1) % paints.length);
-    }, 3000);
+    }, 5000);
   }
 
   useEffect(() => {
