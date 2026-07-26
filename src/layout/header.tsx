@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <div className="flex justify-between">
       <Logo />
-      <div className="flex items-center gap-10">
+      <div className="flex items-center gap-5 md:gap-10">
         <LanguageButton />
         <GalleryButton />
       </div>

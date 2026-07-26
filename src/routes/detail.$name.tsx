@@ -63,7 +63,7 @@ function RouteComponent() {
           </div>
         </div>
         <div className="relative -mt-27.5 bg-no-repeat pt-27.5 pb-14.75 md:mt-0 xl:w-119">
-          <svg className="fill-grey-100 absolute top-0 right-0 ml-auto h-25 w-62.5 font-serif text-[100px] font-bold md:right-auto md:left-0 md:h-50 md:w-112.5 md:text-[180px]">
+          <svg className="fill-grey-100 absolute top-0 right-0 ml-auto h-25 w-55 font-serif text-[90px] font-bold md:right-auto md:left-0 md:h-50 md:w-112.5 md:text-[180px]">
             <text x="0" y="90%">
               {paint.year}
             </text>

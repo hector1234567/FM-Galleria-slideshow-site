@@ -14,7 +14,7 @@ export default function ViewImageButton({
   return (
     <>
       <button
-        className="absolute top-4 left-4 flex cursor-pointer items-center gap-2 bg-black p-3.5 text-white md:top-auto md:bottom-4"
+        className="absolute top-4 left-4 flex cursor-pointer items-center gap-2 bg-black p-2 text-white md:top-auto md:bottom-4 md:p-3.5"
         onClick={() => setModalOpen(true)}
       >
         <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
