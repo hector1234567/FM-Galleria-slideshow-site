@@ -1,9 +1,5 @@
 {
   "Start_slideshow": "Iniciar galería",
-  "page_title": "Galería de Arte | Hector BG",
-  "greeting": "Hola, {{name}}",
-  "nav": {
-    "home": "Inicio",
-    "about": "Acerca de"
-  }
+  "Stop_slideshow": "Detener galería",
+  "page_title": "Galería de Arte | Hector BG"
 }

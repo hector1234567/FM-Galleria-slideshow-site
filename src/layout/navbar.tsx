@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useContext } from "react";
 import { GalleryContext, PaintsContext } from "../contexts";
+import { useTranslation } from "react-i18next";
 
 type NavbarProps = {
   progress: number;
@@ -8,6 +9,9 @@ type NavbarProps = {
 };
 
 export default function Navbar({ progress, index }: NavbarProps) {
+  const { i18n } = useTranslation();
+  const lang = i18n.language === "es" ? "es" : "en";
+
   const { paints, loading } = useContext(PaintsContext);
   const { setIsPlaying } = useContext(GalleryContext);
 
@@ -25,16 +29,16 @@ export default function Navbar({ progress, index }: NavbarProps) {
       ></div>
       <div className="m-x-auto container flex items-center justify-between px-10">
         <div>
-          <p className="mb-1 text-[18px] font-bold">{paint.name}</p>
-          <p className="text-[13px] opacity-75">{paint.artist.name}</p>
+          <p className="mb-1 text-[18px] font-bold">{paint.name[lang]}</p>
+          <p className="text-[13px] opacity-75">{paint.artist.name[lang]}</p>
         </div>
         <div className="flex gap-10">
           <Link
             to={"/detail/$name"}
             params={{
               name:
-                paints[index - 1]?.name.replaceAll(" ", "_") ||
-                paint.name.replaceAll(" ", "_"),
+                paints[index - 1]?.name.en.replaceAll(" ", "_") ||
+                paint.name.en.replaceAll(" ", "_"),
             }}
             onClick={() => setIsPlaying(false)}
             disabled={!paints[index - 1]}
@@ -54,8 +58,8 @@ export default function Navbar({ progress, index }: NavbarProps) {
             to={"/detail/$name"}
             params={{
               name:
-                paints[index + 1]?.name.replaceAll(" ", "_") ||
-                paint.name.replaceAll(" ", "_"),
+                paints[index + 1]?.name.en.replaceAll(" ", "_") ||
+                paint.name.en.replaceAll(" ", "_"),
             }}
             onClick={() => setIsPlaying(false)}
             disabled={!paints[index + 1]}

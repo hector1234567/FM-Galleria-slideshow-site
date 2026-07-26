@@ -2,7 +2,7 @@ import type { PaintType } from "../types";
 import { getImageHeight, shuffle } from "../utils/helpers";
 
 export default async function fetchpaints() {
-  const res = await fetch("/data.json");
+  const res = await fetch("/data_trans.json");
   const data = (await res.json()) as PaintType[];
 
   for (const d of data) {

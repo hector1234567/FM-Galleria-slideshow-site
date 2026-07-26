@@ -1,9 +1,5 @@
 {
   "Start_slideshow": "Start slideshow",
-  "page_title": "Galleria slideshow site | Hector BG",
-  "greeting": "Hello, {{name}}",
-  "nav": {
-    "home": "Home",
-    "about": "About"
-  }
+  "Stop_slideshow": "Stop slideshow",
+  "page_title": "Galleria slideshow site | Hector BG"
 }

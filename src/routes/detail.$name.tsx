@@ -4,12 +4,16 @@ import Navbar from "../layout/navbar";
 import ViewImageButton from "../components/view-image-button";
 import { useContext } from "react";
 import { PaintsContext } from "../contexts";
+import { useTranslation } from "react-i18next";
 
 export const Route = createFileRoute("/detail/$name")({
   component: RouteComponent,
 });
 
 function RouteComponent() {
+  const { i18n } = useTranslation();
+  const lang = i18n.language === "es" ? "es" : "en";
+
   const { name } = Route.useParams() as { name: string };
   const { paints, loading } = useContext(PaintsContext);
   const windowWith = useWindowWidth();
@@ -17,7 +21,9 @@ function RouteComponent() {
   if (loading) return <span>Loading...</span>;
   if (!paints) return <span>Error!</span>;
 
-  const index = paints.findIndex((p) => p.name === name.replaceAll("_", " "));
+  const index = paints.findIndex(
+    (p) => p.name.en === name.replaceAll("_", " "),
+  );
   const paint = paints[index];
 
   const heroImg =
@@ -30,27 +36,27 @@ function RouteComponent() {
           <figure className="relative max-h-70 w-full overflow-hidden md:max-h-140 xl:mb-16 xl:h-118.75">
             <img
               src={heroImg}
-              alt={paint.name}
+              alt={paint.name[lang]}
               className="h-full w-full object-cover"
             />
             <ViewImageButton
               imageUrl={paint.images.gallery}
-              name={paint.name}
+              name={paint.name[lang]}
             />
           </figure>
           <div className="z-10 -mt-15 flex min-w-40 flex-col md:mt-0 xl:justify-between">
             <div className="max-w-[50vw] bg-white p-6 md:-mt-0.5 md:-ml-60 md:pb-16 md:pl-16.25 xl:-ml-16.25">
               <h1 className="mb-2 text-[24px] leading-[115%] font-bold md:mb-6 md:text-[56px]">
-                {paint.name}
+                {paint.name[lang]}
               </h1>
               <span className="text-grey-400 text-[14px]">
-                {paint.artist.name}
+                {paint.artist.name[lang]}
               </span>
             </div>
             <figure>
               <img
                 src={paint.artist.image}
-                alt={paint.artist.name}
+                alt={paint.artist.name[lang]}
                 className="ml-8 h-16 w-16 md:h-32 md:w-32"
               />
             </figure>
@@ -64,7 +70,7 @@ function RouteComponent() {
           </svg>
           <div className="text-grey-400 top relative flex h-full flex-col justify-between md:mx-auto md:max-w-114.25 xl:mx-0 xl:max-w-87.5">
             <p className="mb-10 text-[14px] leading-[200%]">
-              {paint.description}
+              {paint.description[lang]}
             </p>
             <a
               href={paint.source}

@@ -1,7 +1,13 @@
 export type PaintType = {
-  name: string;
+  name: {
+    es: string;
+    en: string;
+  };
   year: number;
-  description: string;
+  description: {
+    es: string;
+    en: string;
+  };
   source: string;
   artist: ArtistType;
   images: ImagesType;
@@ -19,5 +25,8 @@ export type ImagesType = {
 
 export type ArtistType = {
   image: string;
-  name: string;
+  name: {
+    es: string;
+    en: string;
+  };
 };
