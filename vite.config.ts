@@ -18,9 +18,9 @@ export default defineConfig({
         globPatterns: ["**/*.{js,css,html,ico,png,svg,woff2}"],
         runtimeCaching: [
           {
-            // ejemplo: cachear llamadas a una API
-            urlPattern: /^https:\/\/api\.tudominio\.com\/.*/i,
-            handler: "NetworkFirst", // intenta red, si falla usa cache
+            urlPattern:
+              /^https:\/\/fm-galleria-slideshow-site\.netlify\.app\/.*/i,
+            handler: "NetworkFirst",
             options: {
               cacheName: "api-cache",
               expiration: {
@@ -31,7 +31,6 @@ export default defineConfig({
             },
           },
           {
-            // ejemplo: cachear imágenes
             urlPattern: /\.(?:png|jpg|jpeg|svg|webp)$/,
             handler: "CacheFirst",
             options: {
