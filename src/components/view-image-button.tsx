@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Modal from "../layout/modal";
+import { useTranslation } from "react-i18next";
 
 type ViewImageButtonProps = {
   imageUrl: string;
@@ -10,6 +11,7 @@ export default function ViewImageButton({
   imageUrl,
   name,
 }: ViewImageButtonProps) {
+  const { t } = useTranslation();
   const [modalOpen, setModalOpen] = useState(false);
   return (
     <>
@@ -31,7 +33,7 @@ export default function ViewImageButton({
               className="mb-4 cursor-pointer font-serif text-[14px] font-semibold text-white uppercase"
               onClick={() => setModalOpen(false)}
             >
-              Close
+              {t("Close")}
             </button>
             <img
               src={imageUrl}
