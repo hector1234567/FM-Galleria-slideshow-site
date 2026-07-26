@@ -1,12 +1,19 @@
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Outlet, createRootRoute } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import Header from "../layout/header";
 import { useTranslation } from "react-i18next";
 import useLoadPaints from "../hooks/useLoadPaints";
 import { GalleryContext, PaintsContext } from "../contexts";
 import useGallery from "../hooks/useGallery";
+
+const TanStackRouterDevtools = import.meta.env.PROD
+  ? () => null
+  : lazy(() =>
+      import("@tanstack/router-devtools").then((res) => ({
+        default: res.TanStackRouterDevtools,
+      })),
+    );
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -35,7 +42,9 @@ function RootComponent() {
           </GalleryContext.Provider>
         </PaintsContext.Provider>
       </div>
-      <TanStackRouterDevtools />
+      <Suspense>
+        <TanStackRouterDevtools />
+      </Suspense>
       <ReactQueryDevtools />
     </div>
   );
