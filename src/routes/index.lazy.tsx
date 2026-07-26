@@ -9,5 +9,9 @@ export const Route = createLazyFileRoute("/")({
 
 function RouteComponent() {
   const { paints, loading } = useContext(PaintsContext);
-  return <>{loading ? <span>Loading...</span> : <Grid paints={paints} />}</>;
+
+  if (loading) return <span>Loading...</span>;
+  if (!paints) return <span>Error!</span>;
+
+  return <Grid paints={paints} />;
 }
