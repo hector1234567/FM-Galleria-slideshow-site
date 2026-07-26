@@ -25,7 +25,7 @@ function RouteComponent() {
 
   return (
     <>
-      <div className="flex flex-col justify-between gap-9 xl:mb-10 xl:flex-row">
+      <div className="flex flex-col justify-between gap-9 xl:mb-7 xl:flex-row">
         <div className="flex flex-col md:flex-row xl:basis-212">
           <figure className="relative max-h-70 w-full overflow-hidden md:max-h-140 xl:mb-16 xl:h-118.75">
             <img
@@ -68,6 +68,7 @@ function RouteComponent() {
             </p>
             <a
               href={paint.source}
+              target="__blank"
               className="text-[9px] font-bold uppercase transition-colors hover:text-black"
             >
               Go to source
@@ -75,7 +76,7 @@ function RouteComponent() {
           </div>
         </div>
       </div>
-      <Navbar paint={paint} progress={(100 * index) / paints.length} />
+      <Navbar progress={(100 * index) / paints.length} index={index} />
     </>
   );
 }

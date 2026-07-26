@@ -1,12 +1,20 @@
 import { Link } from "@tanstack/react-router";
-import type { PaintType } from "../types";
+import { useContext } from "react";
+import { GalleryContext, PaintsContext } from "../contexts";
 
 type NavbarProps = {
-  paint: PaintType;
   progress: number;
+  index: number;
 };
 
-export default function Navbar({ paint, progress }: NavbarProps) {
+export default function Navbar({ progress, index }: NavbarProps) {
+  const { paints, loading } = useContext(PaintsContext);
+  const { setIsPlaying } = useContext(GalleryContext);
+
+  if (loading) return <span>Loading...</span>;
+  if (!paints) return <span>Error!</span>;
+
+  const paint = paints[index];
   return (
     <nav className="fixed bottom-0 left-0 z-40 flex h-24 w-screen items-center justify-center bg-white">
       <div
@@ -21,7 +29,17 @@ export default function Navbar({ paint, progress }: NavbarProps) {
           <p className="text-[13px] opacity-75">{paint.artist.name}</p>
         </div>
         <div className="flex gap-10">
-          <Link to={"/"} className="transition-opacity hover:opacity-50">
+          <Link
+            to={"/detail/$name"}
+            params={{
+              name:
+                paints[index - 1]?.name.replaceAll(" ", "_") ||
+                paint.name.replaceAll(" ", "_"),
+            }}
+            onClick={() => setIsPlaying(false)}
+            disabled={!paints[index - 1]}
+            className={`transition-opacity ${!paints[index - 1] ? "opacity-25" : "hover:opacity-50"}`}
+          >
             <svg width="26" height="24" xmlns="http://www.w3.org/2000/svg">
               <g stroke="#000" fill="none" fillRule="evenodd">
                 <path
@@ -32,7 +50,17 @@ export default function Navbar({ paint, progress }: NavbarProps) {
               </g>
             </svg>
           </Link>
-          <Link to={"/"} className="transition-opacity hover:opacity-50">
+          <Link
+            to={"/detail/$name"}
+            params={{
+              name:
+                paints[index + 1]?.name.replaceAll(" ", "_") ||
+                paint.name.replaceAll(" ", "_"),
+            }}
+            onClick={() => setIsPlaying(false)}
+            disabled={!paints[index + 1]}
+            className={`transition-opacity ${!paints[index + 1] ? "opacity-25" : "hover:opacity-50"}`}
+          >
             <svg width="26" height="24" xmlns="http://www.w3.org/2000/svg">
               <g stroke="#000" fill="none" fillRule="evenodd">
                 <path
