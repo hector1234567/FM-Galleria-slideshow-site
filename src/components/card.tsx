@@ -5,9 +5,16 @@ type CardProps = {
   imgUrl: string;
   name: string;
   artist: string;
+  nameLink: string;
 };
 
-export default function Card({ height, imgUrl, name, artist }: CardProps) {
+export default function Card({
+  height,
+  imgUrl,
+  name,
+  nameLink,
+  artist,
+}: CardProps) {
   return (
     <div className="not-last:pb-10" style={{ height: `${height}px` }}>
       <div className="relative h-full overflow-clip">
@@ -17,7 +24,7 @@ export default function Card({ height, imgUrl, name, artist }: CardProps) {
         ></div>
         <Link
           to={"/detail/$name"}
-          params={{ name: name.replaceAll(" ", "_") }}
+          params={{ name: nameLink }}
           className="absolute top-0 left-0 flex h-full w-full cursor-pointer items-end bg-linear-to-b from-50% to-black transition-colors hover:from-[#ffffff3e]"
         >
           <div className="m-8 leading-tight text-white">

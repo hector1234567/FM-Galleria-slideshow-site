@@ -47,6 +47,7 @@ export default function Grid({ paints }: GridProps) {
                   height={((p.height + 40) * colHeight * 1.2) / heights[index]}
                   imgUrl={p.images.thumbnail}
                   name={p.name[lang]}
+                  nameLink={p.name.en.replaceAll(" ", "_")}
                   artist={p.artist.name[lang]}
                 />
               ) : null}

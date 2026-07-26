@@ -11,7 +11,7 @@ export const Route = createFileRoute("/detail/$name")({
 });
 
 function RouteComponent() {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const lang = i18n.language === "es" ? "es" : "en";
 
   const { name } = Route.useParams() as { name: string };
@@ -77,7 +77,7 @@ function RouteComponent() {
               target="__blank"
               className="text-[9px] font-bold uppercase transition-colors hover:text-black"
             >
-              Go to source
+              {t("Go_to_source")}
             </a>
           </div>
         </div>
