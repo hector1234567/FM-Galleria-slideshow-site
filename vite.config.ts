@@ -39,6 +39,82 @@ export default defineConfig({
             },
           },
         ],
+        additionalManifestEntries: [
+          { url: "/assets/starry-night/hero-small.jpg", revision: "1" },
+          { url: "/assets/starry-night/hero-large.jpg", revision: "1" },
+
+          {
+            url: "/assets/girl-with-pearl-earring/hero-small.jpg",
+            revision: "1",
+          },
+          {
+            url: "/assets/girl-with-pearl-earring/hero-large.jpg",
+            revision: "1",
+          },
+
+          { url: "/assets/guernica/hero-small.jpg", revision: "1" },
+          { url: "/assets/guernica/hero-large.jpg", revision: "1" },
+
+          { url: "/assets/penitent-magdalene/hero-small.jpg", revision: "1" },
+          { url: "/assets/penitent-magdalene/hero-large.jpg", revision: "1" },
+
+          {
+            url: "/assets/the-storm-on-the-sea-of-galilee/hero-small.jpg",
+            revision: "1",
+          },
+          {
+            url: "/assets/the-storm-on-the-sea-of-galilee/hero-large.jpg",
+            revision: "1",
+          },
+
+          {
+            url: "/assets/the-great-wave-off-kanagawa/hero-small.jpg",
+            revision: "1",
+          },
+          {
+            url: "/assets/the-great-wave-off-kanagawa/hero-large.jpg",
+            revision: "1",
+          },
+
+          {
+            url: "/assets/van-gogh-self-portrait/hero-small.jpg",
+            revision: "1",
+          },
+          {
+            url: "/assets/van-gogh-self-portrait/hero-large.jpg",
+            revision: "1",
+          },
+
+          { url: "/assets/the-sleeping-gypsy/hero-small.jpg", revision: "1" },
+          { url: "/assets/the-sleeping-gypsy/hero-large.jpg", revision: "1" },
+
+          { url: "/assets/lady-with-an-ermine/hero-small.jpg", revision: "1" },
+          { url: "/assets/lady-with-an-ermine/hero-large.jpg", revision: "1" },
+
+          { url: "/assets/the-night-cafe/hero-small.jpg", revision: "1" },
+          { url: "/assets/the-night-cafe/hero-large.jpg", revision: "1" },
+
+          { url: "/assets/the-basket-of-apples/hero-small.jpg", revision: "1" },
+          { url: "/assets/the-basket-of-apples/hero-large.jpg", revision: "1" },
+
+          {
+            url: "/assets/the-boy-in-the-red-vest/hero-small.jpg",
+            revision: "1",
+          },
+          {
+            url: "/assets/the-boy-in-the-red-vest/hero-large.jpg",
+            revision: "1",
+          },
+
+          { url: "/assets/arnolfini-portrait/hero-small.jpg", revision: "1" },
+          { url: "/assets/arnolfini-portrait/hero-large.jpg", revision: "1" },
+
+          { url: "/assets/mona-lisa/hero-small.jpg", revision: "1" },
+          { url: "/assets/mona-lisa/hero-large.jpg", revision: "1" },
+
+          { url: "/assets/the-swing/hero-small.jpg", revision: "1" },
+          { url: "/assets/the-swing/hero-large.jpg", revision: "1" },
+        ],
       },
       manifest: {
         name: "Gallery",
