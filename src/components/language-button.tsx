@@ -13,7 +13,7 @@ export default function LanguageButton() {
 
   return (
     <button
-      className="text-grey-400 cursor-pointer items-center text-[6px] font-bold tracking-[2px] uppercase hover:text-black sm:text-[9px] sm:tracking-[2.5px]"
+      className="text-grey-400 cursor-pointer items-center text-[9px] font-bold tracking-[2px] uppercase hover:text-black sm:text-[12px] sm:tracking-[2.5px]"
       onClick={handleClick}
     >
       {i18n.language === "es" ? "es" : "en"}
