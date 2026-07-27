@@ -42,6 +42,7 @@ export default defineConfig({
         additionalManifestEntries: [
           { url: "/assets/starry-night/hero-small.jpg", revision: "1" },
           { url: "/assets/starry-night/hero-large.jpg", revision: "1" },
+          { url: "/assets/starry-night/artist.jpg", revision: "1" },
 
           {
             url: "/assets/girl-with-pearl-earring/hero-small.jpg",
@@ -51,12 +52,18 @@ export default defineConfig({
             url: "/assets/girl-with-pearl-earring/hero-large.jpg",
             revision: "1",
           },
+          {
+            url: "/assets/girl-with-pearl-earring/artist.jpg",
+            revision: "1",
+          },
 
           { url: "/assets/guernica/hero-small.jpg", revision: "1" },
           { url: "/assets/guernica/hero-large.jpg", revision: "1" },
+          { url: "/assets/guernica/artist.jpg", revision: "1" },
 
           { url: "/assets/penitent-magdalene/hero-small.jpg", revision: "1" },
           { url: "/assets/penitent-magdalene/hero-large.jpg", revision: "1" },
+          { url: "/assets/penitent-magdalene/artist.jpg", revision: "1" },
 
           {
             url: "/assets/the-storm-on-the-sea-of-galilee/hero-small.jpg",
@@ -64,6 +71,10 @@ export default defineConfig({
           },
           {
             url: "/assets/the-storm-on-the-sea-of-galilee/hero-large.jpg",
+            revision: "1",
+          },
+          {
+            url: "/assets/the-storm-on-the-sea-of-galilee/artist.jpg",
             revision: "1",
           },
 
@@ -75,6 +86,10 @@ export default defineConfig({
             url: "/assets/the-great-wave-off-kanagawa/hero-large.jpg",
             revision: "1",
           },
+          {
+            url: "/assets/the-great-wave-off-kanagawa/artist.jpg",
+            revision: "1",
+          },
 
           {
             url: "/assets/van-gogh-self-portrait/hero-small.jpg",
@@ -84,18 +99,26 @@ export default defineConfig({
             url: "/assets/van-gogh-self-portrait/hero-large.jpg",
             revision: "1",
           },
+          {
+            url: "/assets/van-gogh-self-portrait/artist.jpg",
+            revision: "1",
+          },
 
           { url: "/assets/the-sleeping-gypsy/hero-small.jpg", revision: "1" },
           { url: "/assets/the-sleeping-gypsy/hero-large.jpg", revision: "1" },
+          { url: "/assets/the-sleeping-gypsy/artist.jpg", revision: "1" },
 
           { url: "/assets/lady-with-an-ermine/hero-small.jpg", revision: "1" },
           { url: "/assets/lady-with-an-ermine/hero-large.jpg", revision: "1" },
+          { url: "/assets/lady-with-an-ermine/artist.jpg", revision: "1" },
 
           { url: "/assets/the-night-cafe/hero-small.jpg", revision: "1" },
           { url: "/assets/the-night-cafe/hero-large.jpg", revision: "1" },
+          { url: "/assets/the-night-cafe/artist.jpg", revision: "1" },
 
           { url: "/assets/the-basket-of-apples/hero-small.jpg", revision: "1" },
           { url: "/assets/the-basket-of-apples/hero-large.jpg", revision: "1" },
+          { url: "/assets/the-basket-of-apples/artist.jpg", revision: "1" },
 
           {
             url: "/assets/the-boy-in-the-red-vest/hero-small.jpg",
@@ -105,15 +128,22 @@ export default defineConfig({
             url: "/assets/the-boy-in-the-red-vest/hero-large.jpg",
             revision: "1",
           },
+          {
+            url: "/assets/the-boy-in-the-red-vest/artist.jpg",
+            revision: "1",
+          },
 
           { url: "/assets/arnolfini-portrait/hero-small.jpg", revision: "1" },
           { url: "/assets/arnolfini-portrait/hero-large.jpg", revision: "1" },
+          { url: "/assets/arnolfini-portrait/artist.jpg", revision: "1" },
 
           { url: "/assets/mona-lisa/hero-small.jpg", revision: "1" },
           { url: "/assets/mona-lisa/hero-large.jpg", revision: "1" },
+          { url: "/assets/mona-lisa/artist.jpg", revision: "1" },
 
           { url: "/assets/the-swing/hero-small.jpg", revision: "1" },
           { url: "/assets/the-swing/hero-large.jpg", revision: "1" },
+          { url: "/assets/the-swing/artist.jpg", revision: "1" },
         ],
       },
       manifest: {
