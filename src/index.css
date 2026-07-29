@@ -17,9 +17,9 @@
   max-width: 1440px;
 }
 
-@view-transition {
+/* @view-transition {
   navigation: auto;
-}
+} */
 
 /* ::view-transition-old(root),
 ::view-transition-new(root) {
